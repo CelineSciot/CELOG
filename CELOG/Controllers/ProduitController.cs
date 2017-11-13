@@ -22,14 +22,14 @@ namespace CELOG.Controllers
             return ProduitDAO.Get(id);
         }
 
-        public Produit Post(Produit todo)
+        public Produit Post(Produit produit)
         {
-            return ProduitDAO.Create(todo);
+            return ProduitDAO.Create(produit);
         }
 
-        public IHttpActionResult Put(Produit todo)
+        public IHttpActionResult Put(Produit produit)
         {
-            if (ProduitDAO.Update(todo))
+            if (ProduitDAO.Update(produit))
             {
                 return Ok();
             }
