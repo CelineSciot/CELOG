@@ -84,7 +84,7 @@ namespace CELOG.Models
                 command.Parameters.AddWithValue("@prix_Prod", produit.Prix_Prod);
                 command.Parameters.AddWithValue("@categorie_Prod", produit.Categorie_Prod);
                 command.Parameters.AddWithValue("@promo_Prod", produit.Promo_Prod);
-                command.Parameters.AddWithValue("@UrlImage_Prod", produit.UrlImage_Prod);
+                command.Parameters.AddWithValue("@urlImage_Prod", produit.UrlImage_Prod);
 
                 produit.Id_Prod = (int)command.ExecuteScalar();
             }
