@@ -43,19 +43,25 @@ namespace CELOG.Models
             set;
         }
 
+        public string UrlImage_Prod
+        {
+            get;
+            set;
+        }
 
         public Produit()
         {
         }
 
-        public Produit(int qte_Prod, string label_Prod, double prix_Prod, double promo_Prod, string categorie_Prod)
+        public Produit(int qte_Prod, string label_Prod, double prix_Prod, double promo_Prod, string categorie_Prod,string UrlImage_Prod)
         {
             this.Qte_Prod = qte_Prod;
             this.Label_Prod = label_Prod;
             this.Prix_Prod = prix_Prod;
             this.Promo_Prod = promo_Prod;
             this.Categorie_Prod = categorie_Prod;
+            this.UrlImage_Prod = UrlImage_Prod;
         }
-        public Produit(string label_Prod, double prix_Prod) : this(0,label_Prod, prix_Prod,0.0,"") { }
+        public Produit(string label_Prod, double prix_Prod) : this(0,label_Prod, prix_Prod,0.0,"","") { }
     }
 }
