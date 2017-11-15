@@ -10,13 +10,13 @@ namespace CELOG.Controllers
 {
     public class ProduitController : ApiController
     {
-        //http://127.0.0.1:8080/api/product
+       
         public IEnumerable<Produit> GetAllProduit()
         {
             return ProduitDAO.GetAllProduit();
         }
 
-        //http://127.0.0.1:8080/api/product?id=5
+       
         public Produit Get(int id)
         {
             return ProduitDAO.Get(id);

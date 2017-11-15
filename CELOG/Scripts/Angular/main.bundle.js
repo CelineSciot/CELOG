@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/admin-product-gestion/admin-product-gestion.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n"
+module.exports = "\n"
 
 /***/ }),
 
@@ -99,7 +99,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n\r\n<app-list-product (orderProductChange)=\"tmpOrderProduct=$event\" (productsChange)=\"tmpProduct=$event\"></app-list-product>\r\n\r\n<app-current-order\r\n  [currentOrderInjected]=\"tmpOrderProduct\"\r\n  (orderValidated)= \"tmpCurrentOrder = $event\">\r\n</app-current-order>\r\n\r\n<app-list-order [orderInjected]=\"tmpCurrentOrder\"></app-list-order>\r\n\r\n<app-admin-product-gestion></app-admin-product-gestion>\r\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<app-list-product (orderProductChange)=\"tmpOrderProduct=$event\" (productsChange)=\"tmpProduct=$event\"></app-list-product>\r\n\r\n<app-current-order\r\n  [currentOrderInjected]=\"tmpOrderProduct\"\r\n  (orderValidated)= \"tmpCurrentOrder = $event\">\r\n</app-current-order>\r\n\r\n<app-list-order [orderInjected]=\"tmpCurrentOrder\"></app-list-order>\r\n\r\n<app-admin-product-gestion></app-admin-product-gestion>\r\n"
 
 /***/ }),
 
@@ -213,7 +213,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/current-order/current-order.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Commande actuelle</h2>\r\n<ul>\r\n  <li *ngFor=\"let orderProduct of currentOrder.orderProducts;\">\r\n    {{orderProduct.product.name}} {{orderProduct.quantity}}\r\n  </li>\r\n</ul>\r\n<button (click)=\"emitAndResetOrder()\">Valider la commande</button>\r\n\r\n\r\n"
+module.exports = "<h2>Commande actuelle</h2>\n<ul>\n  <li *ngFor=\"let orderProduct of currentOrder.orderProducts;\">\n    {{orderProduct.product.name}} {{orderProduct.quantity}}\n  </li>\n</ul>\n<button (click)=\"emitAndResetOrder()\">Valider la commande</button>\n\n\n"
 
 /***/ }),
 
@@ -302,7 +302,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/list-order/list-order.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Total de toutes mes commandes</h2>\r\n{{totalOfAllOrders()}} €\r\n"
+module.exports = "<h2>Total de toutes mes commandes</h2>\n{{totalOfAllOrders()}} €\n"
 
 /***/ }),
 
@@ -381,7 +381,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/list-product/list-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<input type=\"button\" name=\"ajouter\" value=\"Ajouter\">\r\n<input type=\"button\" name=\"supprimer\" value=\"Supprimer\">\r\n<input type=\"button\" name=\"modifier\" value=\"Modifier\">\r\n\r\n<!--<div *ngIf=\".isSelected()\">-->\r\n<form #formProduct=\"ngForm\" (submit)=\"createProduct()\">\r\n  Name :\r\n  <input type=\"text\" name=\"name\" [(ngModel)]=\"tmpProduct.name\" required>\r\n  Prix :\r\n  <input type=\"number\" name=\"price\" [(ngModel)]=\"tmpProduct.price\" required>\r\n  Stock :\r\n  <input type=\"number\" name=\"stock\" [(ngModel)]=\"tmpProduct.stock\" required>\r\n  Categorie :\r\n  <input type=\"text\" name=\"categorie\" [(ngModel)]=\"tmpProduct.categorie\" required>\r\n  Valeur de la promo :\r\n  <input type=\"number\" name=\"promo\" [(ngModel)]=\"tmpProduct.promo\" required>\r\n  Url de l'image :\r\n  <input type=\"text\" name=\"url\" [(ngModel)]=\"tmpProduct.urlImage\">\r\n\r\n  <input type=\"submit\" [disabled]=\"!formProduct.form.valid\">\r\n\r\n  {{tmpProduct|json}}\r\n</form>\r\nHey hey hey\r\n<p *ngFor=\"let prod of listProduct;\">\r\n  {{prod.name | uppercase}}\r\n  <img [src]=\"prod.urlImage\" height=\"100\" width=\"100\"/>\r\n\r\n  <input type=\"button\" value=\"+\" (click)=\"incrementQuantityOfProduct(prod)\">\r\n  <input type=\"button\" value=\"-\" (click)=\"decrementQuantityOfProduct(prod)\">\r\n</p>\r\n<!--</div>-->\r\n<h1>Supprimer</h1>\r\n<p *ngFor=\"let prod of listProduct;\">\r\n  {{prod.name | uppercase}}\r\n  <img [src]=\"prod.urlImage\" height=\"100\" width=\"100\"/>\r\n  <input type=\"button\" value=\"supprimer\" (click)=\"deleteProduct(prod)\">\r\n</p>\r\n<h1>Update</h1>\r\n<p *ngFor=\"let prod of listProduct;\">\r\n  {{prod.name | uppercase}}\r\n  <img [src]=\"prod.urlImage\" height=\"100\" width=\"100\"/>\r\n  <input type=\"text\" name=\"name\" [value]=\"prod.name\">\r\n  <input type=\"number\" name=\"price\" [value]=\"prod.price\">\r\n  <input type=\"number\" name=\"stock\" [value]=\"prod.stock\">\r\n  <input type=\"text\" name=\"url\" [value]=\"prod.urlImage\">\r\n\r\n <!-- <input type=\"submit\" (click)=\"updateProduct(prod,name,price,stock,url)\">-->\r\n\r\n</p>\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<input type=\"button\" name=\"ajouter\" value=\"Ajouter\">\n<input type=\"button\" name=\"supprimer\" value=\"Supprimer\">\n<input type=\"button\" name=\"modifier\" value=\"Modifier\">\n\n<!--<div *ngIf=\".isSelected()\">-->\n<form #formProduct=\"ngForm\" (submit)=\"createProduct()\">\n  Name :\n  <input type=\"text\" name=\"name\" [(ngModel)]=\"tmpProduct.name\" required>\n  Prix :\n  <input type=\"number\" name=\"price\" [(ngModel)]=\"tmpProduct.price\" required>\n  Stock :\n  <input type=\"number\" name=\"stock\" [(ngModel)]=\"tmpProduct.stock\" required>\n  Categorie :\n  <input type=\"text\" name=\"categorie\" [(ngModel)]=\"tmpProduct.categorie\" required>\n  Valeur de la promo :\n  <input type=\"number\" name=\"promo\" [(ngModel)]=\"tmpProduct.promo\" required>\n  Url de l'image :\n  <input type=\"text\" name=\"url\" [(ngModel)]=\"tmpProduct.urlImage\">\n\n  <input type=\"submit\" [disabled]=\"!formProduct.form.valid\">\n\n  {{tmpProduct|json}}\n</form>\n<p *ngFor=\"let prod of listProduct;\">\n  {{prod.name | uppercase}}\n  <img [src]=\"prod.urlImage\" height=\"100\" width=\"100\"/>\n\n  <input type=\"button\" value=\"+\" (click)=\"incrementQuantityOfProduct(prod)\">\n  <input type=\"button\" value=\"-\" (click)=\"decrementQuantityOfProduct(prod)\">\n</p>\n<!--</div>-->\n<h1>Supprimer</h1>\n<p *ngFor=\"let prod of listProduct;\">\n  {{prod.name | uppercase}}\n  <img [src]=\"prod.urlImage\" height=\"100\" width=\"100\"/>\n  <input type=\"button\" value=\"supprimer\" (click)=\"deleteProduct(prod)\">\n</p>\n<h1>Update</h1>\n<p *ngFor=\"let prod of listProduct;\">\n  {{prod.name | uppercase}}\n  <img [src]=\"prod.urlImage\" height=\"100\" width=\"100\"/>\n  <input type=\"text\" name=\"name\" [value]=\"prod.name\">\n  <input type=\"number\" name=\"price\" [value]=\"prod.price\">\n  <input type=\"number\" name=\"stock\" [value]=\"prod.stock\">\n  <input type=\"text\" name=\"url\" [value]=\"prod.urlImage\">\n\n <!-- <input type=\"submit\" (click)=\"updateProduct(prod,name,price,stock,url)\">-->\n\n</p>\n\n\n\n\n"
 
 /***/ }),
 

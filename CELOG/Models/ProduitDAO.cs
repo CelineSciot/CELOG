@@ -27,23 +27,25 @@ namespace CELOG.Models
                 SqlCommand command = new SqlCommand(QUERY, connection);
 
                 SqlDataReader reader = command.ExecuteReader();
-
+                
                 //TODO
                 while (reader.Read())
                 {
-                    produits.Add(new Produit(reader.GetInt32(0),
-                                        reader.GetString(1),
-                                        reader.GetDouble(2),
-                                        reader.GetDouble(3),
-                                        reader.GetString(4),
-                                        reader.GetString(5)
-
-                                       ));
+                    Produit prod = new Produit(
+                        reader.GetInt32(0),
+                        reader.GetInt32(1),
+                        reader.GetString(2),
+                        reader.GetFloat(3),
+                        reader.GetFloat(4),
+                        reader.GetString(5),
+                        reader.GetString(6));
+                    //EXCEPTION ICIIIII !!!!!!!!!!!!!!!
+                    produits.Add(prod);
                 }
             }
             return produits;
         }
-
+        
         public static Produit Get(int id)
         {
             Produit produit = null;
@@ -60,13 +62,15 @@ namespace CELOG.Models
                 //TODO
                 if (reader.Read())
                 {
-                    produit = new Produit(reader.GetInt32(0),
-                                        reader.GetString(1),
-                                        reader.GetDouble(2),
-                                        reader.GetDouble(3),
-                                        reader.GetString(4),
-                                        reader.GetString(5)
-                                       );
+                  /*  produit = new Produit(
+                        reader.GetInt32(0),
+                        reader.GetInt32(1),
+                        reader.GetString(2),
+                        reader.GetDouble(3),
+                        reader.GetDouble(4),
+                        reader.GetString(5),
+                        reader.GetString(6)
+                                       );*/
                 }
             }
             return produit;
@@ -79,11 +83,11 @@ namespace CELOG.Models
                 conn.Open();
                 //TODO
                 SqlCommand command = new SqlCommand(CREATE, conn);
-                command.Parameters.AddWithValue("@label_Prod", produit.Label_Prod);
                 command.Parameters.AddWithValue("@qte_Prod", produit.Qte_Prod);
+                command.Parameters.AddWithValue("@label_Prod", produit.Label_Prod);
                 command.Parameters.AddWithValue("@prix_Prod", produit.Prix_Prod);
-                command.Parameters.AddWithValue("@categorie_Prod", produit.Categorie_Prod);
                 command.Parameters.AddWithValue("@promo_Prod", produit.Promo_Prod);
+                command.Parameters.AddWithValue("@categorie_Prod", produit.Categorie_Prod);
                 command.Parameters.AddWithValue("@urlImage_Prod", produit.UrlImage_Prod);
 
                 produit.Id_Prod = (int)command.ExecuteScalar();
