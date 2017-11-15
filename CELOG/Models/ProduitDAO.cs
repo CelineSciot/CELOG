@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+using System.Web;
+
 
 namespace CELOG.Models
 {
@@ -35,11 +34,10 @@ namespace CELOG.Models
                         reader.GetInt32(0),
                         reader.GetInt32(1),
                         reader.GetString(2),
-                        reader.GetFloat(3),
-                        reader.GetFloat(4),
+                        reader.GetDecimal(3),
+                        reader.GetDecimal(4),
                         reader.GetString(5),
                         reader.GetString(6));
-                    //EXCEPTION ICIIIII !!!!!!!!!!!!!!!
                     produits.Add(prod);
                 }
             }
@@ -62,15 +60,15 @@ namespace CELOG.Models
                 //TODO
                 if (reader.Read())
                 {
-                  /*  produit = new Produit(
+                    produit = new Produit(
                         reader.GetInt32(0),
                         reader.GetInt32(1),
                         reader.GetString(2),
-                        reader.GetDouble(3),
-                        reader.GetDouble(4),
+                        reader.GetDecimal(3),
+                        reader.GetDecimal(4),
                         reader.GetString(5),
                         reader.GetString(6)
-                                       );*/
+                                       );
                 }
             }
             return produit;
