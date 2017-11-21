@@ -27,24 +27,24 @@ namespace CELOG.Controllers
             return ProduitDAO.Create(produit);
         }
 
-        public string Put(Produit produit)
+        public IHttpActionResult Put(Produit produit)
         {
             if (ProduitDAO.Update(produit))
             {
-                return "OKOKOK";
+                return Ok();
             }
 
-            return "NONONONON";
+            return BadRequest();
         }
 
-        public string Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
             if (ProduitDAO.Delete(id))
             {
-                return "ok";
+                return Ok();
             }
 
-            return "RATE";
+            return BadRequest();
         }
     }
 }
