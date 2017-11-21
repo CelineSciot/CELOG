@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /CELOG/Models/DataBase.cs
+/CELOG/Scripts/angular/favicon.ico

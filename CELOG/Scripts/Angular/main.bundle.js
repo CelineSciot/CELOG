@@ -25,7 +25,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "input{\r\n  width:700px;\r\n  height: 100px;\r\n  border-radius: 12px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/admin-product-gestion/admin-product-gestion.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n"
+module.exports = "<!Doctype html>\r\n<html>\r\n<head>\r\n  <meta name=\"viewport\" content=\"width=device-width, initialscale= 1.0\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\r\n  <script src=\"https://code.angularjs.org/1.4.6/angular.min.js\"></script>\r\n</head>\r\n<body>\r\n<div class=\"container\">\r\n  <div class=\"row\">\r\n\r\n    <section class=\"col-sm-12\" align=\"center\">\r\n      <input type=\"button\" class=\"btn-info\" value=\"Gestion client\">\r\n      <input class=\"btn-info\" (orderProductChange)=\"tmpOrderProduct=$event\" (productsChange)=\"tmpProduct=$event\" type=\"button\" value=\"Administration\" routerLink=\"/gestion-produit\">\r\n\r\n    </section>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n<!-- Mettre à la fin pour un meilleur chargement -->\r\n<script src=\"D:/Documents/HELHA 2017-2018/TI/Projet/ProjetTIAngular/ProjetTiAngular/bootstrap/js/jquery.js\"></script>\r\n<script src=\"D:/Documents/HELHA 2017-2018/TI/Projet/ProjetTIAngular/ProjetTiAngular/bootstrap/js/bootstrap.min.js\"></script>\r\n</body>\r\n</html>\r\n\r\n"
 
 /***/ }),
 
@@ -66,7 +66,7 @@ var AdminProductGestionComponent = (function () {
     return AdminProductGestionComponent;
 }());
 AdminProductGestionComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-admin-product-gestion',
         template: __webpack_require__("../../../../../src/app/admin-product-gestion/admin-product-gestion.component.html"),
         styles: [__webpack_require__("../../../../../src/app/admin-product-gestion/admin-product-gestion.component.css")]
@@ -86,7 +86,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "body {\r\n  padding-top: 5px;\r\n}\r\nfooter,header {\r\n  background-color: #2ECCFA;\r\n  line-height: 40px;\r\n  text-align: center;\r\n}\r\narticle{\r\n  background-color: #F2F2F2;\r\n  border: 1px solid white;\r\n  border-radius: 6px;\r\n  line-height: 40px;\r\n  text-align: center;\r\n}\r\nnav{\r\n  background-color: #F2F2F2;\r\n  border: 2px solid #2ECCFA;\r\n  line-height: 40px;\r\n  text-align: center;\r\n}\r\n.col-lg-offset-2 {\r\n  margin-left: 50%;\r\n}\r\n\r\n.container {\r\n  padding-right: 10px;\r\n  padding-left: 10px;\r\n  margin-right: auto;\r\n  margin-left: auto;\r\n}\r\n.col-lg-offset-6 {\r\n  margin-left: 50%;\r\n}\r\nsection.col-sm-8,section.col-sm-2{\r\n  line-height:500px;\r\n}\r\nsection.col-sm-2,nav.col-sm-2{\r\n  line-height:250px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -99,7 +99,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<app-list-product (orderProductChange)=\"tmpOrderProduct=$event\" (productsChange)=\"tmpProduct=$event\"></app-list-product>\r\n\r\n<app-current-order\r\n  [currentOrderInjected]=\"tmpOrderProduct\"\r\n  (orderValidated)= \"tmpCurrentOrder = $event\">\r\n</app-current-order>\r\n\r\n<app-list-order [orderInjected]=\"tmpCurrentOrder\"></app-list-order>\r\n\r\n<app-admin-product-gestion></app-admin-product-gestion>\r\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<!--<app-list-product (orderProductChange)=\"tmpOrderProduct=$event\" (productsChange)=\"tmpProduct=$event\"></app-list-product>\r\n<app-current-order\r\n  [currentOrderInjected]=\"tmpOrderProduct\"\r\n  (orderValidated)= \"tmpCurrentOrder = $event\">\r\n</app-current-order>\r\n\r\n<app-list-order [orderInjected]=\"tmpCurrentOrder\"></app-list-order>\r\n\r\n<app-admin-product-gestion></app-admin-product-gestion>-->\r\n\r\n\r\n<!Doctype html>\r\n<html>\r\n<head>\r\n  <meta name=\"viewport\" content=\"width=device-width, initialscale= 1.0\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\r\n  <script src=\"https://code.angularjs.org/1.4.6/angular.min.js\"></script>\r\n</head>\r\n<body>\r\n<div class=\"container\">\r\n  <header class=\"row\">\r\n    <div class=\"col-md-10\"> Bienvenue chez CELOG !</div>\r\n    <button type=\"button\" class=\"btn btn-default navbar-btn\" onclick=\"document.location.href='Connexion.html'\">Sign in</button>\r\n  </header>\r\n  <div class=\"row\">\r\n    <nav>\r\n      <input type=\"button\" value=\"Accueil\" >\r\n      <input type=\"button\" value=\"Produit\" >\r\n      <input type=\"button\" value=\"Gestion commande\">\r\n      <input (orderProductChange)=\"tmpOrderProduct=$event\" (productsChange)=\"tmpProduct=$event\" type=\"button\" value=\"Administration\" routerLink=\"/administration\">\r\n    </nav>\r\n\r\n    <section class=\"col-sm-8\">\r\n      <router-outlet>\r\n      </router-outlet>\r\n    </section>\r\n  </div>\r\n  <footer class=\"row\">\r\n    <div class=\"col-lg-16\"> Footer</div>\r\n  </footer>\r\n</div>\r\n\r\n\r\n\r\n<!-- Mettre à la fin pour un meilleur chargement -->\r\n<script src=\"D:/Documents/HELHA 2017-2018/TI/Projet/ProjetTIAngular/ProjetTiAngular/bootstrap/js/jquery.js\"></script>\r\n<script src=\"D:/Documents/HELHA 2017-2018/TI/Projet/ProjetTIAngular/ProjetTiAngular/bootstrap/js/bootstrap.min.js\"></script>\r\n</body>\r\n</html>\r\n"
 
 /***/ }),
 
@@ -122,7 +122,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -141,13 +141,14 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__list_product_list_product_component__ = __webpack_require__("../../../../../src/app/list-product/list-product.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__current_order_current_order_component__ = __webpack_require__("../../../../../src/app/current-order/current-order.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__list_order_list_order_component__ = __webpack_require__("../../../../../src/app/list-order/list-order.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__admin_product_gestion_admin_product_gestion_component__ = __webpack_require__("../../../../../src/app/admin-product-gestion/admin-product-gestion.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__produit_manager_service__ = __webpack_require__("../../../../../src/app/produit-manager.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_common_http__ = __webpack_require__("../../../common/@angular/common/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__list_product_list_product_component__ = __webpack_require__("../../../../../src/app/list-product/list-product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__current_order_current_order_component__ = __webpack_require__("../../../../../src/app/current-order/current-order.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__list_order_list_order_component__ = __webpack_require__("../../../../../src/app/list-order/list-order.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__admin_product_gestion_admin_product_gestion_component__ = __webpack_require__("../../../../../src/app/admin-product-gestion/admin-product-gestion.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__produit_manager_service__ = __webpack_require__("../../../../../src/app/produit-manager.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common_http__ = __webpack_require__("../../../common/@angular/common/http.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -164,27 +165,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+var routes = [
+    { path: 'administration', component: __WEBPACK_IMPORTED_MODULE_8__admin_product_gestion_admin_product_gestion_component__["a" /* AdminProductGestionComponent */] },
+    { path: 'gestion-produit', component: __WEBPACK_IMPORTED_MODULE_5__list_product_list_product_component__["a" /* ListProductComponent */] }
+];
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_4__list_product_list_product_component__["a" /* ListProductComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__current_order_current_order_component__["a" /* CurrentOrderComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__list_order_list_order_component__["a" /* ListOrderComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__admin_product_gestion_admin_product_gestion_component__["a" /* AdminProductGestionComponent */]
+            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__list_product_list_product_component__["a" /* ListProductComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__current_order_current_order_component__["a" /* CurrentOrderComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__list_order_list_order_component__["a" /* ListOrderComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__admin_product_gestion_admin_product_gestion_component__["a" /* AdminProductGestionComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_9__angular_common_http__["b" /* HttpClientModule */],
+            __WEBPACK_IMPORTED_MODULE_10__angular_common_http__["b" /* HttpClientModule */],
+            [__WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* RouterModule */].forRoot(routes)]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_8__produit_manager_service__["a" /* ProduitManagerService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_9__produit_manager_service__["a" /* ProduitManagerService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -239,7 +246,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var CurrentOrderComponent = (function () {
     function CurrentOrderComponent() {
-        this.orderValidated = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.orderValidated = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
         this.currentOrder = new __WEBPACK_IMPORTED_MODULE_2__order__["a" /* Order */]();
     }
     CurrentOrderComponent.prototype.ngOnInit = function () {
@@ -260,15 +267,15 @@ var CurrentOrderComponent = (function () {
     return CurrentOrderComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__order_product__["a" /* OrderProduct */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__order_product__["a" /* OrderProduct */]) === "function" && _a || Object)
 ], CurrentOrderComponent.prototype, "currentOrderInjected", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
-    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]) === "function" && _b || Object)
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _b || Object)
 ], CurrentOrderComponent.prototype, "orderValidated", void 0);
 CurrentOrderComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-current-order',
         template: __webpack_require__("../../../../../src/app/current-order/current-order.component.html"),
         styles: [__webpack_require__("../../../../../src/app/current-order/current-order.component.css")]
@@ -343,11 +350,11 @@ var ListOrderComponent = (function () {
     return ListOrderComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__order__["a" /* Order */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__order__["a" /* Order */]) === "function" && _a || Object)
 ], ListOrderComponent.prototype, "orderInjected", void 0);
 ListOrderComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-list-order',
         template: __webpack_require__("../../../../../src/app/list-order/list-order.component.html"),
         styles: [__webpack_require__("../../../../../src/app/list-order/list-order.component.css")]
@@ -381,7 +388,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/list-product/list-product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<input type=\"button\" name=\"ajouter\" value=\"Ajouter\">\n<input type=\"button\" name=\"supprimer\" value=\"Supprimer\">\n<input type=\"button\" name=\"modifier\" value=\"Modifier\">\n\n<!--<div *ngIf=\".isSelected()\">-->\n<form #formProduct=\"ngForm\" (submit)=\"createProduct()\">\n  Name :\n  <input type=\"text\" name=\"name\" [(ngModel)]=\"tmpProduct.name\" required>\n  Prix :\n  <input type=\"number\" name=\"price\" [(ngModel)]=\"tmpProduct.price\" required>\n  Stock :\n  <input type=\"number\" name=\"stock\" [(ngModel)]=\"tmpProduct.stock\" required>\n  Categorie :\n  <input type=\"text\" name=\"categorie\" [(ngModel)]=\"tmpProduct.categorie\" required>\n  Valeur de la promo :\n  <input type=\"number\" name=\"promo\" [(ngModel)]=\"tmpProduct.promo\" required>\n  Url de l'image :\n  <input type=\"text\" name=\"url\" [(ngModel)]=\"tmpProduct.urlImage\">\n\n  <input type=\"submit\" [disabled]=\"!formProduct.form.valid\">\n\n  {{tmpProduct|json}}\n</form>\n<p *ngFor=\"let prod of listProduct;\">\n  {{prod.name | uppercase}}\n  <img [src]=\"prod.urlImage\" height=\"100\" width=\"100\"/>\n\n  <input type=\"button\" value=\"+\" (click)=\"incrementQuantityOfProduct(prod)\">\n  <input type=\"button\" value=\"-\" (click)=\"decrementQuantityOfProduct(prod)\">\n</p>\n<!--</div>-->\n<h1>Supprimer</h1>\n<p *ngFor=\"let prod of listProduct;\">\n  {{prod.name | uppercase}}\n  <img [src]=\"prod.urlImage\" height=\"100\" width=\"100\"/>\n  <input type=\"button\" value=\"supprimer\" (click)=\"deleteProduct(prod)\">\n</p>\n<h1>Update</h1>\n<p *ngFor=\"let prod of listProduct;\">\n  {{prod.name | uppercase}}\n  <img [src]=\"prod.urlImage\" height=\"100\" width=\"100\"/>\n  <input type=\"text\" name=\"name\" [value]=\"prod.name\">\n  <input type=\"number\" name=\"price\" [value]=\"prod.price\">\n  <input type=\"number\" name=\"stock\" [value]=\"prod.stock\">\n  <input type=\"text\" name=\"url\" [value]=\"prod.urlImage\">\n\n <!-- <input type=\"submit\" (click)=\"updateProduct(prod,name,price,stock,url)\">-->\n\n</p>\n\n\n\n\n"
+module.exports = "\r\n<!Doctype html>\r\n<html>\r\n<head>\r\n  <meta name=\"viewport\" content=\"width=device-width, initialscale= 1.0\">\r\n</head>\r\n<body>\r\n<div class=\"container\">\r\n\r\n  <div class=\"row\">\r\n\r\n    <section name=\"Disponibilite\" class=\"col-sm-8\">\r\n\r\n      <H4 align=\"center\"> ARTICLES DISPONIBLES </H4>\r\n       <div class=\"row-sm-15\">\r\n         <div *ngFor=\"let prod of listProduct; index as i;\">\r\n           <article class=\"col-md-4 col-md-offset-1\">\r\n             {{prod.name | uppercase}}\r\n             <img [src]=\"prod.urlImage\" height=\"100\" width=\"100\"/>\r\n           <br>\r\n             <input type=\"button\" class=\"btn\" value=\"+\" (click)=\"incrementQuantityOfProduct(prod)\">\r\n             <input type=\"button\" class=\"btn\" value=\"-\" (click)=\"decrementQuantityOfProduct(prod)\">\r\n             <input type=\"button\" value=\"supprimer\" (click)=\"deleteProduct(i)\">\r\n           </article>\r\n\r\n         </div>\r\n       </div>\r\n    </section>\r\n    <section class=\"col-sm-3\">\r\n    <H1> Ajouter un produit :</H1>\r\n      <form #formProduct=\"ngForm\" (submit)=\"createProduct()\">\r\n        Name :\r\n        <input type=\"text\" name=\"name\" class=\"form-control\" [(ngModel)]=\"tmpProduct.name\" required>\r\n        Prix :\r\n        <input type=\"number\" name=\"price\" class=\"form-control\" [(ngModel)]=\"tmpProduct.price\" required>\r\n        Stock :\r\n        <input type=\"number\" name=\"stock\" class=\"form-control\" [(ngModel)]=\"tmpProduct.stock\" required>\r\n        Categorie :\r\n        <input type=\"text\" name=\"categorie\" class=\"form-control\"[(ngModel)]=\"tmpProduct.categorie\" >\r\n        Valeur de la promo :\r\n        <input type=\"number\" name=\"promo\" class=\"form-control\"[(ngModel)]=\"tmpProduct.promo\" >\r\n        Url de l'image :\r\n        <input type=\"text\" name=\"url\" class=\"form-control\"[(ngModel)]=\"tmpProduct.urlImage\">\r\n\r\n        <input type=\"submit\" class=\"btn\"[disabled]=\"!formProduct.form.valid\">\r\n      </form>\r\n    </section>\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <div class=\"row\">\r\n        </div>\r\n        <div class=\"row\">\r\n          <h1>Update</h1>\r\n          <div *ngFor=\"let prod of listProduct;\">\r\n            <article class=\"col-md-3 col-lg-offset-1\">\r\n              {{prod.name | uppercase}}\r\n              <img [src]=\"prod.urlImage\" height=\"100\" width=\"100\"/>\r\n              <input type=\"text\" class=\"form-control\" name=\"name\"  [(value)]=\"prod.name\">\r\n              <input type=\"number\" class=\"form-control\" name=\"price\" [(value)]=\"prod.price\">\r\n              <input type=\"number\" class=\"form-control\" name=\"stock\" [(value)]=\"prod.stock\">\r\n              <input type=\"text\" class=\"form-control\" name=\"url\" [(value)]=\"prod.urlImage\">\r\n              <input type=\"submit\" (click)=\"updateProduct(prod)\">\r\n            </article>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n\r\n<script src=\"D:/Documents/HELHA 2017-2018/TI/Projet/ProjetTIAngular/ProjetTiAngular/bootstrap/js/jquery.js\"></script>\r\n<script src=\"D:/Documents/HELHA 2017-2018/TI/Projet/ProjetTIAngular/ProjetTiAngular/bootstrap/js/bootstrap.min.js\"></script>\r\n</body>\r\n</html>\r\n\r\n\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -393,9 +400,7 @@ module.exports = "<input type=\"button\" name=\"ajouter\" value=\"Ajouter\">\n<i
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__product__ = __webpack_require__("../../../../../src/app/product.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__order_product__ = __webpack_require__("../../../../../src/app/order-product.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_q__ = __webpack_require__("../../../../q/q.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_q___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_q__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__produit_manager_service__ = __webpack_require__("../../../../../src/app/produit-manager.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__produit_manager_service__ = __webpack_require__("../../../../../src/app/produit-manager.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -409,14 +414,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var ListProductComponent = (function () {
     function ListProductComponent(productService) {
         this.productService = productService;
         this.tmpProduct = new __WEBPACK_IMPORTED_MODULE_1__product__["a" /* Product */]();
         this.listProduct = [];
-        this.orderProductChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        this.productsChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.orderProductChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+        this.productsChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
     }
     ListProductComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -429,7 +433,10 @@ var ListProductComponent = (function () {
         return this.listProduct;
     };
     ListProductComponent.prototype.createProduct = function () {
+        var _this = this;
         this.listProduct.push(this.tmpProduct);
+        this.productService.createProduct(this.tmpProduct).subscribe(function (product) { return _this.tmpProduct; });
+        this.emitProducts();
         this.tmpProduct = new __WEBPACK_IMPORTED_MODULE_1__product__["a" /* Product */];
     };
     ListProductComponent.prototype.emitProducts = function () {
@@ -444,30 +451,40 @@ var ListProductComponent = (function () {
     ListProductComponent.prototype.decrementQuantityOfProduct = function (product) {
         this.emitOrderProduct(product, false);
     };
-    ListProductComponent.prototype.deleteProduct = function (product) {
-        var index = this.listProduct.findIndex(function (product) { return product.name === name; });
-        this.listProduct.splice(index, 1);
-        Object(__WEBPACK_IMPORTED_MODULE_3_q__["resolve"])(true);
+    //COMMENTAIRE CELINE : J'ai ajouté ngOnUnit() qui modifie la liste directement dans la vue
+    ListProductComponent.prototype.deleteProduct = function (index) {
+        var _this = this;
+        var DELETE_PRODUIT = function () { return _this.listProduct.slice(index, 1); };
+        var DISPLAY_ERROR = function (error) { return console.error(error); };
+        this.productService
+            .deleteProduct(this.listProduct[index].id)
+            .subscribe(DELETE_PRODUIT, DISPLAY_ERROR);
+        this.listProduct.slice(index);
+        this.ngOnInit();
     };
-    ListProductComponent.prototype.updateProduct = function (product, value1, value2, value3, value4) {
+    //COMMENTAIRE CELINE : IDEM qu'au dessus
+    ListProductComponent.prototype.updateProduct = function (prod) {
+        console.log(prod.name);
+        this.productService.updateProduct(prod);
+        this.ngOnInit();
     };
     return ListProductComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]) === "function" && _a || Object)
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _a || Object)
 ], ListProductComponent.prototype, "orderProductChange", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
-    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]) === "function" && _b || Object)
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _b || Object)
 ], ListProductComponent.prototype, "productsChange", void 0);
 ListProductComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-list-product',
         template: __webpack_require__("../../../../../src/app/list-product/list-product.component.html"),
         styles: [__webpack_require__("../../../../../src/app/list-product/list-product.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__produit_manager_service__["a" /* ProduitManagerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__produit_manager_service__["a" /* ProduitManagerService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__produit_manager_service__["a" /* ProduitManagerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__produit_manager_service__["a" /* ProduitManagerService */]) === "function" && _c || Object])
 ], ListProductComponent);
 
 var _a, _b, _c;
@@ -628,15 +645,18 @@ var Product = (function () {
     };
     Product.prototype.getCleanDataForSending = function () {
         var jsonToSend = {
-            'Label_Prod': this._name,
-            'Prix_Prod': this._price,
-            'Qte_Prod': this._stock,
-            'UrlImage_prod': this._urlImage,
-            'Promo_Prod': this._promo,
-            'Categorie_Prod': this._categorie
+            "Label_Prod": this._name,
+            "Qte_Prod": this._stock,
+            "Categorie_Prod": this._categorie,
+            "Prix_Prod": this._price,
+            "Promo_Prod": this._promo,
+            "UrlImage_prod": this._urlImage
         };
         if (this._id !== -1) {
             jsonToSend['Id'] = this._id;
+        }
+        if (this.urlImage === '') {
+            this._urlImage = 'https://vignette.wikia.nocookie.net/arrow-france/images/e/ea/No-foto.png/revision/latest?cb=20160615100846&path-prefix=fr';
         }
         return jsonToSend;
     };
@@ -790,6 +810,7 @@ var ProduitManagerService = (function () {
         return this.http.get('http://localhost:59583/api/produit');
     };
     ProduitManagerService.prototype.createProduct = function (product) {
+        console.log("test");
         return this.http
             .post('http://localhost:59583/api/produit', product.getCleanDataForSending());
     };
@@ -798,13 +819,15 @@ var ProduitManagerService = (function () {
             params: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpParams */]().set('id', id + '')
         });
     };
+    //TODO:: J'ai essayé le data binding je crois (banane dans une boite)mais je remarque qu'il ne garde que les anciennes valeurs.
     ProduitManagerService.prototype.updateProduct = function (product) {
+        console.log(product.name);
         return this.http.put('http://localhost:59583/api/produit', product.getCleanDataForSending());
     };
     return ProduitManagerService;
 }());
 ProduitManagerService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
 ], ProduitManagerService);
 
@@ -844,7 +867,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_20" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_23" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
