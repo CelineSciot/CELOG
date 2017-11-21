@@ -10,7 +10,7 @@ namespace CELOG.Models
     public static class ProduitDAO
     {
         private static readonly string QUERY = "SELECT * FROM Produit";
-        private static readonly string GET = QUERY + "WHERE id_Prod = @id_Prod";
+        private static readonly string GET = QUERY + " WHERE id_Prod = @id_Prod";
         private static readonly string CREATE = "INSERT INTO Produit(qte_Prod,label_Prod,prix_Prod,promo_Prod,categorie_Prod,urlImage_Prod) OUTPUT INSERTED.id_Prod VALUES(@qte_Prod,@label_Prod,@prix_Prod,@promo_Prod,@categorie_Prod,@UrlImage_Prod) ";
         private static readonly string DELETE = "DELETE FROM produit WHERE id_prod = @id";
         private static readonly string UPDATE = "UPDATE Produit SET qte_Prod=@qte_Prod ,label_Prod= @label_Prod,prix_Prod=@prix_Prod ,promo_Prod=@promo_Prod ,categorie_Prod=@categorie_Prod, urlImage_Prod=@urlImage_Prod WHERE id_Prod = @id_Prod";
@@ -126,9 +126,8 @@ namespace CELOG.Models
                 command.Parameters.AddWithValue("@urlImage_Prod", produit.UrlImage_Prod);
                 command.Parameters.AddWithValue("@id_Prod", produit.Id_Prod);
 
-
+                
                 aEteModifie = command.ExecuteNonQuery() != 0;
-
             }
             return aEteModifie;
         }
