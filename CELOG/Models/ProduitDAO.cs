@@ -126,9 +126,7 @@ namespace CELOG.Models
                 command.Parameters.AddWithValue("@urlImage_Prod", produit.UrlImage_Prod);
                 command.Parameters.AddWithValue("@id_Prod", produit.Id_Prod);
 
-
                 aEteModifie = command.ExecuteNonQuery() != 0;
-
             }
             return aEteModifie;
         }
