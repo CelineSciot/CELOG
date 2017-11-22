@@ -27,24 +27,24 @@ namespace CELOG.Controllers
             return UtilisateurDAO.Create(utilisateur);
         }
 
-        public IHttpActionResult Put(Utilisateur utilisateur)
+        public string Put(Utilisateur utilisateur)
         {
             if (UtilisateurDAO.Update(utilisateur))
             {
-                return Ok();
+                return "OK";
             }
 
-            return BadRequest();
+            return "NOTOK";
         }
 
-        public IHttpActionResult Delete(int id)
+        public string Delete(int id)
         {
             if (UtilisateurDAO.Delete(id))
             {
-                return Ok();
+                return "OK";
             }
 
-            return BadRequest();
+            return "NOTOK";
         }
     }
 }

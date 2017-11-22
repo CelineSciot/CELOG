@@ -24,13 +24,13 @@ namespace CELOG.Models
             set;
         }
 
-        public int Sexe_User
+        public string Sexe_User
         {
             get;
             set;
         }
 
-        public DateTime DateNais_User
+        public string DateNais_User
         {
             get;
             set;
@@ -73,7 +73,7 @@ namespace CELOG.Models
         {
         }
 
-        public Utilisateur(int id_User, string mdp_User, int sexe_User, DateTime dateNais_User, string numCompte_User, string login_User, string rue_User, string num_User, int codePostal_User, string ville_User, string pays_User)
+        public Utilisateur(int id_User, string mdp_User, string sexe_User, string dateNais_User, string numCompte_User, string login_User, string rue_User, string num_User, int codePostal_User, string ville_User, string pays_User)
         {
             Id_User = id_User;
             Mdp_User = mdp_User;
@@ -88,6 +88,6 @@ namespace CELOG.Models
             Pays_User = pays_User;
         }
 
-        public Utilisateur(string mdp_User, int sexe_User, DateTime dateNais_User, string numCompte_User, string login_User, string rue_User, string num_User, int codePostal_User, string ville_User, string pays_User) : this(0, mdp_User, sexe_User, dateNais_User, numCompte_User, login_User, rue_User, num_User, codePostal_User, ville_User, pays_User) { }
+        public Utilisateur(string mdp_User, string sexe_User, string dateNais_User, string numCompte_User, string login_User, string rue_User, string num_User, int codePostal_User, string ville_User, string pays_User) : this(0, mdp_User, sexe_User, dateNais_User, numCompte_User, login_User, rue_User, num_User, codePostal_User, ville_User, pays_User) { }
     }
 }

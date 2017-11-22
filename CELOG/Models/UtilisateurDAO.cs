@@ -14,7 +14,7 @@ namespace CELOG.Models
         private static readonly string GET = QUERY + " WHERE id_User = @id_User";
         private static readonly string CREATE = "INSERT INTO Utilisateur(login_User,mdp_User,sexe_User,dateNais_User,numCompte_User,rue_User,num_User,codePostal_User,ville_User,pays_User) OUTPUT INSERTED.id_User VALUES(@login_User,@mdp_User,@sexe_User,@dateNais_User,@numCompte_User,@rue_User,@num_User,@codePostal_User,@ville_User,@pays_User) ";
         private static readonly string DELETE = "DELETE FROM Utilisateur WHERE id_User = @id_User";
-        private static readonly string UPDATE = "UPDATE Utilisateur SET login_User=@login_User,mdp_User=@mdp_User,sexe_User=|sexe_User,dateNais_User=@dateNais_User,numCompte_User=@numCompte_User,rue_User=@rue_User,num_User=@num_User,codePostal_User=@codePostal_User,ville_User=@ville_User,pays_User=@pays_User WHERE id_User = @id_User";
+        private static readonly string UPDATE = "UPDATE Utilisateur SET login_User=@login_User,mdp_User=@mdp_User,sexe_User=@sexe_User,dateNais_User=@dateNais_User,numCompte_User=@numCompte_User,rue_User=@rue_User,num_User=@num_User,codePostal_User=@codePostal_User,ville_User=@ville_User,pays_User=@pays_User WHERE id_User = @id_User";
 
         public static List<Utilisateur> GetAllUtilisateur()
         {
@@ -33,8 +33,8 @@ namespace CELOG.Models
                     Utilisateur util = new Utilisateur(
                         (int)reader["id_User"],
                         (string)reader["mdp_User"],
-                        (int)reader["sexe_User"],
-                        (DateTime)reader["dateNais_User"],
+                        (string)reader["sexe_User"],
+                        (string)reader["dateNais_User"],
                         (string)reader["numCompte_User"],
                         (string)reader["login_User"],
                         (string)reader["rue_User"],
@@ -70,8 +70,8 @@ namespace CELOG.Models
                     utilisateur = new Utilisateur(
                      (int)reader["id_User"],
                         (string)reader["mdp_User"],
-                        (int)reader["sexe_User"],
-                        (DateTime)reader["dateNais_User"],
+                        (string)reader["sexe_User"],
+                        (string)reader["dateNais_User"],
                         (string)reader["numCompte_User"],
                         (string)reader["login_User"],
                         (string)reader["rue_User"],
@@ -141,7 +141,7 @@ namespace CELOG.Models
                 command.Parameters.AddWithValue("@codePostal_User", utilisateur.CodePostal_User);
                 command.Parameters.AddWithValue("@ville_User", utilisateur.Ville_User);
                 command.Parameters.AddWithValue("@pays_User", utilisateur.Pays_User);
-
+                command.Parameters.AddWithValue("@id_User", utilisateur.Id_User);
 
                 aEteModifie = command.ExecuteNonQuery() != 0;
 
