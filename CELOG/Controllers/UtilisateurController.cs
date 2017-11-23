@@ -5,12 +5,13 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using CELOG.Models;
+using CELOG.Filters;
 
 namespace CELOG.Controllers
 {
     public class UtilisateurController : ApiController
     {
-       
+       // [JwtAuthentication]
         public IEnumerable<Utilisateur> GetAllUtilisateur()
         {
             return UtilisateurDAO.GetAllUtilisateur();

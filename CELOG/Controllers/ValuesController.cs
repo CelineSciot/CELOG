@@ -10,10 +10,12 @@ namespace CELOG.Controllers
     public class ValuesController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        public /*IEnumerable<string>*/string Get()
         {
-            return new string[] { "value1", "value2" };
+            //return new string[] { "value1", "value2" };
+            return "value";
         }
+
 
         // GET api/values/5
         public string Get(int id)
