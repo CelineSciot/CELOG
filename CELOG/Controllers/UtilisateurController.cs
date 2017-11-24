@@ -11,12 +11,11 @@ namespace CELOG.Controllers
 {
     public class UtilisateurController : ApiController
     {
-       // [JwtAuthentication]
+       //[JwtAuthentication]
         public IEnumerable<Utilisateur> GetAllUtilisateur()
         {
             return UtilisateurDAO.GetAllUtilisateur();
         }
-
        
         public Utilisateur Get(int id)
         {

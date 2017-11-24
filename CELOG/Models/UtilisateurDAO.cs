@@ -15,7 +15,7 @@ namespace CELOG.Models
         private static readonly string CREATE = "INSERT INTO Utilisateur(login_User,mdp_User,sexe_User,dateNais_User,numCompte_User,rue_User,num_User,codePostal_User,ville_User,pays_User) OUTPUT INSERTED.id_User VALUES(@login_User,@mdp_User,@sexe_User,@dateNais_User,@numCompte_User,@rue_User,@num_User,@codePostal_User,@ville_User,@pays_User) ";
         private static readonly string DELETE = "DELETE FROM Utilisateur WHERE id_User = @id_User";
         private static readonly string UPDATE = "UPDATE Utilisateur SET login_User=@login_User,mdp_User=@mdp_User,sexe_User=@sexe_User,dateNais_User=@dateNais_User,numCompte_User=@numCompte_User,rue_User=@rue_User,num_User=@num_User,codePostal_User=@codePostal_User,ville_User=@ville_User,pays_User=@pays_User WHERE id_User = @id_User";
-
+        private static readonly string GETTOKEN = "SELECT * FROM Utilisateur WHERE login_User=@email and mdp_User=@password";
         public static List<Utilisateur> GetAllUtilisateur()
         {
             List<Utilisateur> utilisateurs = new List<Utilisateur>();
@@ -148,5 +148,25 @@ namespace CELOG.Models
             }
             return aEteModifie;
         }
+
+        public static bool GetConnection(string username, string password)
+        {
+            using (SqlConnection connection = DataBase.GetSqlConnection())
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(GETTOKEN, connection);
+                command.Parameters.AddWithValue("@email", username);
+                command.Parameters.AddWithValue("@password", password);
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }

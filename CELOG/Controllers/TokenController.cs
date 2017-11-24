@@ -14,8 +14,8 @@ namespace CELOG.Controllers
             {
                 return JwtManager.GenerateToken(username);
             }
-
-            throw new HttpResponseException(HttpStatusCode.Unauthorized);
+            //throw new HttpResponseException(HttpStatusCode.Unauthorized);
+            return "error";
         }
 
         public bool CheckUser(string username, string password)
