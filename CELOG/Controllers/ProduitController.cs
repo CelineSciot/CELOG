@@ -22,6 +22,11 @@ namespace CELOG.Controllers
             return ProduitDAO.Get(id);
         }
 
+        public IEnumerable<string> GetCategorie(string categ)
+        {
+            return ProduitDAO.GetCategorie();
+        }
+
         public Produit Post(Produit produit)
         {
             return ProduitDAO.Create(produit);

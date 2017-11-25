@@ -14,6 +14,8 @@ namespace CELOG.Models
         private static readonly string CREATE = "INSERT INTO Produit(qte_Prod,label_Prod,prix_Prod,promo_Prod,categorie_Prod,urlImage_Prod) OUTPUT INSERTED.id_Prod VALUES(@qte_Prod,@label_Prod,@prix_Prod,@promo_Prod,@categorie_Prod,@UrlImage_Prod) ";
         private static readonly string DELETE = "DELETE FROM produit WHERE id_prod = @id";
         private static readonly string UPDATE = "UPDATE Produit SET qte_Prod=@qte_Prod ,label_Prod= @label_Prod,prix_Prod=@prix_Prod ,promo_Prod=@promo_Prod ,categorie_Prod=@categorie_Prod, urlImage_Prod=@urlImage_Prod WHERE id_Prod = @id_Prod";
+        private static readonly string GETCATEG = "SELECT distinct categorie_Prod FROM Produit";
+
 
         public static List<Produit> GetAllProduit()
         {
@@ -42,7 +44,26 @@ namespace CELOG.Models
             }
             return produits;
         }
-        
+
+        public static List<string> GetCategorie()
+        {
+            List<string> categs = null;
+            using (SqlConnection conn = DataBase.GetSqlConnection())
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(GETCATEG, conn);
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string str = reader.GetString(0);
+                    
+                    categs.Add(str);
+                }
+            }
+            return categs;
+        }
+
         public static Produit Get(int id)
         {
             Produit produit = new Produit();
