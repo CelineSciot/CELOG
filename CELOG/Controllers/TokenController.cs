@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Web.Http;
 using CELOG.Filters;
+using CELOG.Models;
 
 namespace CELOG.Controllers
 {
@@ -20,8 +21,11 @@ namespace CELOG.Controllers
 
         public bool CheckUser(string username, string password)
         {
-            // you should authenticate the user. In this example we are goint to return always true
-            return true;
+            if (UtilisateurDAO.GetConnection(username, password))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

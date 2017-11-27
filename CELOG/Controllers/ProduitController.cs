@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using CELOG.Models;
+using CELOG.Filters;
 
 namespace CELOG.Controllers
 {
@@ -26,12 +27,12 @@ namespace CELOG.Controllers
         {
             return ProduitDAO.GetCategorie();
         }
-
+        [JwtAuthentication]
         public Produit Post(Produit produit)
         {
             return ProduitDAO.Create(produit);
         }
-
+        [JwtAuthentication]
         public string Put(Produit produit)
         {
             if (ProduitDAO.Update(produit))
@@ -41,7 +42,7 @@ namespace CELOG.Controllers
 
             return "pas-Put";
         }
-
+        [JwtAuthentication]
         public string Delete(int id)
         {
             if (ProduitDAO.Delete(id))
