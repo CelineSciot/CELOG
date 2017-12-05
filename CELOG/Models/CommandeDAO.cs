@@ -10,10 +10,10 @@ namespace CELOG.Models
     public static class CommandeDAO
     {
         private static readonly string QUERY = "SELECT * FROM Commande";
-        private static readonly string GET = QUERY + " WHERE id_Utilisateur = @id_Utilisateur";
-        private static readonly string CREATE = "INSERT INTO Commande(id_Commande,id_Utilisateur,id_Produit,quantite) OUTPUT INSERTED.id_Commande VALUES(@id_Utilisateur,@id_Produit,@quantite) ";
-        private static readonly string DELETE = "DELETE FROM Commande WHERE id_Utilisateur = @id";
-       // private static readonly string UPDATE = "UPDATE Commande SET id_Utilisateur=@id_Utilisateur,id_Produit=@id_Produit,quantite=@quantite";
+        private static readonly string GET = QUERY + " WHERE id_Utilisateur = @id_User";
+        private static readonly string CREATE = "INSERT INTO Commande(id_Utilisateur,id_Produit,quantite,total) OUTPUT INSERTED.id_Commande VALUES(@id_User,@id_Produit,@quantite,@total) ";
+        private static readonly string DELETE = "DELETE FROM Commande WHERE id_Produit = @id";
+        private static readonly string UPDATE = "UPDATE Commande SET id_Utilisateur=@id_User,id_Produit=@id_Produit,quantite=@quantite,total=@total";
         //private static readonly string GETCATEG = "SELECT distinct categorie_Prod FROM Produit";
 
 
@@ -34,7 +34,10 @@ namespace CELOG.Models
                     Commande comm = new Commande(
                         reader.GetInt32(0),
                         reader.GetInt32(1),
-                        reader.GetInt32(2));
+                        reader.GetInt32(2),
+                        reader.GetDecimal(3),
+                        reader.GetInt32(4)
+                        );
                        
                     commandes.Add(comm);
                 }
@@ -43,32 +46,33 @@ namespace CELOG.Models
         }
 
        
-        public static Commande Get(int id)
+        public static List<Commande> GetPanier(int id)
         {
-            Commande comm = new Commande();
+            List<Commande> commandes =new List<Commande>();
 
             using (SqlConnection conn = DataBase.GetSqlConnection())
             {
                 conn.Open();
                
                 SqlCommand command = new SqlCommand(GET, conn);
-                command.Parameters.AddWithValue("@id_Utilisateur", id);
-                // EXECPTION ICI avec le =
-                //System.Data.SqlClient.SqlException : 'Incorrect syntax near '='.'
-
+                command.Parameters.AddWithValue("@id_User", id);
+               
                 SqlDataReader reader = command.ExecuteReader();
                
-                if (reader.Read())
+                while (reader.Read())
                 {
-                    comm = new Commande(
+                    Commande com = new Commande(
                        reader.GetInt32(0),
                        reader.GetInt32(1),
-                       reader.GetInt32(2)
+                       reader.GetInt32(2),
+                       reader.GetDecimal(3),
+                       reader.GetInt32(4)
                       
-                                       );
+                       );
+                    commandes.Add(com);
                 }
             }
-            return comm;
+            return commandes;
         }
 
         public static Commande Create(Commande commande)
@@ -78,11 +82,11 @@ namespace CELOG.Models
                 conn.Open();
                 
                 SqlCommand command = new SqlCommand(CREATE, conn);
-                command.Parameters.AddWithValue("@id_Utilisateur", commande.Id_Utilisateur);
+                command.Parameters.AddWithValue("@id_User", commande.Id_Utilisateur);
                 command.Parameters.AddWithValue("@id_Produit", commande.Id_Produit);
                 command.Parameters.AddWithValue("@quantite", commande.Quantite);
-
-               commande.Id_Commande = (int)command.ExecuteScalar();
+                command.Parameters.AddWithValue("@total", commande.Total);
+                commande.Id_Commande= (int)command.ExecuteScalar();
             }
             return commande;
         }
@@ -104,7 +108,7 @@ namespace CELOG.Models
             return estSupprime;
         }
         
-       /* public static bool Update(Produit produit)
+       public static bool Update(Commande commande)
         {
             bool aEteModifie = false;
             using (SqlConnection conn = DataBase.GetSqlConnection())
@@ -112,17 +116,14 @@ namespace CELOG.Models
                 conn.Open();
 
                 SqlCommand command = new SqlCommand(UPDATE, conn);
-                command.Parameters.AddWithValue("@label_Prod", produit.Label_Prod);
-                command.Parameters.AddWithValue("@qte_Prod", produit.Qte_Prod);
-                command.Parameters.AddWithValue("@prix_Prod", produit.Prix_Prod);
-                command.Parameters.AddWithValue("@categorie_Prod", produit.Categorie_Prod);
-                command.Parameters.AddWithValue("@promo_Prod", produit.Promo_Prod);
-                command.Parameters.AddWithValue("@urlImage_Prod", produit.UrlImage_Prod);
-                command.Parameters.AddWithValue("@id_Prod", produit.Id_Prod);
+                command.Parameters.AddWithValue("@id_User", commande.Id_Utilisateur);
+                command.Parameters.AddWithValue("@id_Produit", commande.Id_Produit);
+                command.Parameters.AddWithValue("@quantite", commande.Quantite);
+                command.Parameters.AddWithValue("@total", commande.Total);
 
                 aEteModifie = command.ExecuteNonQuery() != 0;
             }
             return aEteModifie;
-        }*/
+        }
     }
 }

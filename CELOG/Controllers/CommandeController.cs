@@ -10,16 +10,16 @@ namespace CELOG.Controllers
 {
     public class CommandeController : ApiController
     {
-       
+       [System.Web.Http.Route("api/commande/admin")]
         public IEnumerable<Commande> GetAllCommandes()
         {
             return CommandeDAO.GetAllCommandes();
         }
 
        
-        public Commande Get(int id)
+        public IEnumerable<Commande> GetPanier(int id)
         {
-            return CommandeDAO.Get(id);
+            return CommandeDAO.GetPanier(id);
         }
 
         public Commande Post(Commande produit)

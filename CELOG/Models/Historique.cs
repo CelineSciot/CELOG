@@ -6,48 +6,44 @@ using System.Web;
 
 namespace CELOG.Models
 {
-    public class Commande
+    public class Historique
     {
 
-        public int Quantite
+
+        public int Id_Historique
         {
             get;
             set;
         }
 
-        public int Id_Produit
+        public int Id_User
         {
             get;
             set;
         }
 
-        public int Id_Utilisateur
+        public string Resume
         {
             get;
             set;
         }
+
         public decimal Total
         {
             get;
             set;
         }
-        public int Id_Commande
-        {
-            get;
-            set;
-        }
 
-        public Commande()
+        public Historique()
         {
         }
 
-        public Commande(int id_Utilisateur,int id_Produit, int quantite, decimal total, int id_Commande)
+        public Historique(int id_Historique,int id_User, string resume, decimal total)
         {
-            Id_Utilisateur = id_Utilisateur;
-            Id_Produit = id_Produit;
-            Quantite = quantite;
+            Id_Historique = id_Historique;
+            Id_User = id_User;
+            Resume = resume;
             Total = total;
-            Id_Commande = id_Commande;
         }
         //public Commande(int qte_Prod,string label_Prod, decimal prix_Prod, decimal promo_Prod, string categorie_Prod, string UrlImage_Prod) : this(0,qte_Prod, label_Prod, prix_Prod, promo_Prod, categorie_Prod, UrlImage_Prod) { }
     }
