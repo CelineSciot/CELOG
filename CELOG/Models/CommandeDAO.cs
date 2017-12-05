@@ -13,6 +13,7 @@ namespace CELOG.Models
         private static readonly string GET = QUERY + " WHERE id_Utilisateur = @id_User";
         private static readonly string CREATE = "INSERT INTO Commande(id_Utilisateur,id_Produit,quantite,total) OUTPUT INSERTED.id_Commande VALUES(@id_User,@id_Produit,@quantite,@total) ";
         private static readonly string DELETE = "DELETE FROM Commande WHERE id_Produit = @id";
+        private static readonly string DELETE2 = "DELETE FROM Commande WHERE id_Utilisateur =@id_User";
         private static readonly string UPDATE = "UPDATE Commande SET id_Utilisateur=@id_User,id_Produit=@id_Produit,quantite=@quantite,total=@total";
         //private static readonly string GETCATEG = "SELECT distinct categorie_Prod FROM Produit";
 
@@ -107,8 +108,25 @@ namespace CELOG.Models
 
             return estSupprime;
         }
-        
-       public static bool Update(Commande commande)
+
+        public static bool Delete2(int id_User)
+        {
+            bool estSupprime = false;
+            using (SqlConnection conn = DataBase.GetSqlConnection())
+            {
+                conn.Open();
+
+
+                SqlCommand command = new SqlCommand(DELETE2, conn);
+                command.Parameters.AddWithValue("@id_User", id_User);
+
+                estSupprime = command.ExecuteNonQuery() != 0;
+            }
+
+            return estSupprime;
+        }
+
+        public static bool Update(Commande commande)
         {
             bool aEteModifie = false;
             using (SqlConnection conn = DataBase.GetSqlConnection())

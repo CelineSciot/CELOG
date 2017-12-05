@@ -46,6 +46,15 @@ namespace CELOG.Controllers
 
             return "Pas-Delete";
         }
+        public string Delete2(int id_User)
+        {
+            if (CommandeDAO.Delete2(id_User))
+            {
+                return "ok-Delete";
+            }
+
+            return "Pas-Delete";
+        }
     }
 }
     

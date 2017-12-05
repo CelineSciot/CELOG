@@ -11,7 +11,7 @@ namespace CELOG.Models
     {
         private static readonly string QUERY = "SELECT * FROM Historique";
         private static readonly string GET = QUERY + " WHERE id_User = @id_User";
-        private static readonly string CREATE = "INSERT INTO Historique(id_User,resume,total) OUTPUT INSERTED.id_Historique VALUES(@id_User,@resume,@total) ";
+        private static readonly string CREATE = "INSERT INTO Historique(id_User,resume,total) OUTPUT INSERTED.id_Historique VALUES(@id_User,@resume,@total)";
         private static readonly string DELETE = "DELETE FROM Historique WHERE id_User = @id";
        // private static readonly string UPDATE = "UPDATE Commande SET id_Utilisateur=@id_Utilisateur,id_Produit=@id_Produit,quantite=@quantite";
         //private static readonly string GETCATEG = "SELECT distinct categorie_Prod FROM Produit";
@@ -59,7 +59,7 @@ namespace CELOG.Models
 
                 SqlDataReader reader = command.ExecuteReader();
                
-                if (reader.Read())
+                while (reader.Read())
                 {
                     Historique hist = new Historique(
                        reader.GetInt32(0),
