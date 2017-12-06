@@ -13,6 +13,11 @@ namespace CELOG.Models
             get;
             set;
         }
+        public string Nom_User
+        {
+            get;
+            set;
+        }
         public string Login_User
         {
             get;
@@ -66,6 +71,11 @@ namespace CELOG.Models
             get;
             set;
         }
+        public bool Status_Admin
+        {
+            get;
+            set;
+        }
 
 
 
@@ -73,9 +83,10 @@ namespace CELOG.Models
         {
         }
 
-        public Utilisateur(int id_User, string mdp_User, string sexe_User, string dateNais_User, string numCompte_User, string login_User, string rue_User, string num_User, int codePostal_User, string ville_User, string pays_User)
+        public Utilisateur(int id_User, string nom_User,string mdp_User, string sexe_User, string dateNais_User, string numCompte_User, string login_User, string rue_User, string num_User, int codePostal_User, string ville_User, string pays_User, bool status_Admin)
         {
             Id_User = id_User;
+            Nom_User = nom_User;
             Mdp_User = mdp_User;
             Sexe_User = sexe_User;
             DateNais_User = dateNais_User;
@@ -86,8 +97,10 @@ namespace CELOG.Models
             CodePostal_User = codePostal_User;
             Ville_User = ville_User;
             Pays_User = pays_User;
+            Status_Admin = status_Admin;
+           
         }
 
-        public Utilisateur(string mdp_User, string sexe_User, string dateNais_User, string numCompte_User, string login_User, string rue_User, string num_User, int codePostal_User, string ville_User, string pays_User) : this(0, mdp_User, sexe_User, dateNais_User, numCompte_User, login_User, rue_User, num_User, codePostal_User, ville_User, pays_User) { }
+        public Utilisateur(string nom_User,string mdp_User, string sexe_User, string dateNais_User, string numCompte_User, string login_User, string rue_User, string num_User, int codePostal_User, string ville_User, string pays_User, bool status_Admin) : this(0,nom_User, mdp_User, sexe_User, dateNais_User, numCompte_User, login_User, rue_User, num_User, codePostal_User, ville_User, pays_User,status_Admin) { }
     }
 }

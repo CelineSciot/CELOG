@@ -22,6 +22,11 @@ namespace CELOG.Controllers
             return UtilisateurDAO.Get(id);
         }
 
+        public Utilisateur Get(string login)
+        {
+            return UtilisateurDAO.GetByLogin(login);
+        }
+
         public Utilisateur Post(Utilisateur utilisateur)
         {
             return UtilisateurDAO.Create(utilisateur);
