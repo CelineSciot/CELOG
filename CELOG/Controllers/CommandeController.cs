@@ -26,8 +26,8 @@ namespace CELOG.Controllers
         {
             return CommandeDAO.Create(produit);
         }
-
-        /*public string Put(Commande produit)
+    
+        public string Put(Commande produit)
         {
             if (CommandeDAO.Update(produit))
             {
@@ -35,7 +35,7 @@ namespace CELOG.Controllers
             }
 
             return "pas-Put";
-        }*/
+        }
 
         public string Delete(int id)
         {
