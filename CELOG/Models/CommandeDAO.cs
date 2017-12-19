@@ -14,7 +14,7 @@ namespace CELOG.Models
         private static readonly string CREATE = "INSERT INTO Commande(id_Utilisateur,id_Produit,quantite,total) OUTPUT INSERTED.id_Commande VALUES(@id_User,@id_Produit,@quantite,@total) ";
         private static readonly string DELETE = "DELETE FROM Commande WHERE id_Produit = @id";
         private static readonly string DELETE2 = "DELETE FROM Commande WHERE id_Utilisateur =@id_User";
-        private static readonly string UPDATE = "UPDATE Commande SET id_Utilisateur=@id_User,id_Produit=@id_Produit,quantite=@quantite,total=@total";
+        private static readonly string UPDATE = "UPDATE Commande SET id_Utilisateur=@id_User,id_Produit=@id_Produit,quantite=@quantite,total=@total where id_Commande= @id_Com";
         //private static readonly string GETCATEG = "SELECT distinct categorie_Prod FROM Produit";
 
 
@@ -138,6 +138,7 @@ namespace CELOG.Models
                 command.Parameters.AddWithValue("@id_Produit", commande.Id_Produit);
                 command.Parameters.AddWithValue("@quantite", commande.Quantite);
                 command.Parameters.AddWithValue("@total", commande.Total);
+                command.Parameters.AddWithValue("@id_Com", commande.Id_Commande);
 
                 aEteModifie = command.ExecuteNonQuery() != 0;
             }
